@@ -4,7 +4,8 @@
   "description": "Plugin to integrate KSS into the Vite bundling process",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsup-node src/index.ts --dts"
+    "build": "tsup-node src/index.ts --dts",
+    "example": "vite build --config example/vite.config.ts"
   },
   "repository": {
     "type": "git",
