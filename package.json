@@ -18,7 +18,14 @@
   },
   "homepage": "https://github.com/pixeldesu/vite-plugin-kss#readme",
   "devDependencies": {
+    "rollup": "^3.24.0",
     "tsup": "^6.7.0",
-    "typescript": "^5.1.3"
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "@types/kss": "^3.0.2",
+    "@types/node": "^20.2.5",
+    "kss": "^3.1.0"
   }
 }
