@@ -1,0 +1,20 @@
+{
+  "name": "vite-plugin-kss",
+  "version": "1.0.0",
+  "description": "Plugin to integrate KSS into the Vite bundling process",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixeldesu/vite-plugin-kss.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pixeldesu/vite-plugin-kss/issues"
+  },
+  "homepage": "https://github.com/pixeldesu/vite-plugin-kss#readme"
+}
