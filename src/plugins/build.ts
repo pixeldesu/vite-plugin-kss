@@ -6,7 +6,8 @@ import { KSSPluginContext } from '../context'
 
 export function BuildPlugin(ctx: KSSPluginContext) {
   return <Plugin>{
-    name: 'kss-build',
+    name: 'vite-plugin-kss:build',
+    apply: 'build',
 
     writeBundle(_options, bundle) {
       const { kss: kssOptions } = ctx.options
