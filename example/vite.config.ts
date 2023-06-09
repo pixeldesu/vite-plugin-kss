@@ -12,6 +12,10 @@ export default {
   },
   plugins: [
     ViteKSS({
+      dev: {
+        prefix: '/prototype/',
+        entry: '/src/main.js'
+      },
       kss: {
         source: ['src/'],
         destination: 'prototype/',

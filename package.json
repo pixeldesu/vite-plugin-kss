@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsup-node src/index.ts --dts",
-    "example": "vite build --config example/vite.config.ts"
+    "example": "vite build --config example/vite.config.ts",
+    "example-dev": "vite serve --config example/vite.config.ts"
   },
   "repository": {
     "type": "git",
