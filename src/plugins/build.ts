@@ -1,15 +1,15 @@
 import type { Plugin } from 'vite'
 import kss from 'kss'
-import { ViteKSSPluginOptions } from '../types'
 import { _writeBundle } from '../utils/writeBundle'
 import { OutputChunk } from 'rollup'
+import { KSSPluginContext } from '../context'
 
-export function BuildPlugin(options: ViteKSSPluginOptions) {
+export function BuildPlugin(ctx: KSSPluginContext) {
   return <Plugin>{
     name: 'kss-build',
 
     writeBundle(_options, bundle) {
-      const { kss: kssOptions } = options
+      const { kss: kssOptions } = ctx.options
 
       _writeBundle(bundle, kssOptions)
 
@@ -24,8 +24,8 @@ export function BuildPlugin(options: ViteKSSPluginOptions) {
         })
         .map(([fileName, _assetInfo]) => fileName)
 
-      kssOptions.css = kssOptions.css.concat(cssAssets)
-      kssOptions.js = kssOptions.js.concat(jsAssets)
+      kssOptions.css = kssOptions.css!.concat(cssAssets)
+      kssOptions.js = kssOptions.js!.concat(jsAssets)
 
       kss(kssOptions)
     }
