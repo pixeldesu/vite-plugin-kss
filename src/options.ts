@@ -6,6 +6,10 @@ import { join } from 'path'
 export function resolveOptions(userOptions: Partial<ViteKSSPluginOptions>, viteConfig: ResolvedConfig): ResolvedViteKSSOptions {
   const options = {
     ...userOptions,
+    dev: {
+      prefix: userOptions.dev?.prefix || '/prototype/',
+      entry: userOptions.dev?.entry || ''
+    },
     kss: {
       source: userOptions.kss?.source || [],
       destination: userOptions.kss?.destination || '',
@@ -13,8 +17,12 @@ export function resolveOptions(userOptions: Partial<ViteKSSPluginOptions>, viteC
       js: userOptions.kss?.js || []
     }
   }
-  
+
   return {
+    dev: {
+      prefix: options.dev.prefix,
+      entry: options.dev.entry
+    },
     kss: {
       source: options.kss.source.map((src) => join(viteConfig.root, src)),
       destination: join(viteConfig.root, options.kss.destination),

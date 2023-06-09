@@ -8,7 +8,13 @@ export type KssOptions = {
   css?: string[]
 } & DefaultKssOptions
 
+export type DevPluginOptions = {
+  prefix: string
+  entry: string
+}
+
 export type ViteKSSPluginOptions = {
+  dev: DevPluginOptions
   kss: KssOptions
 }
 
