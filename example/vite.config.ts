@@ -4,7 +4,7 @@ export default {
   root: process.cwd() + '/example/',
   build: {
     assetsDir: '',
-    outDir: './dist/',
+    outDir: 'dist/',
     manifest: true,
     rollupOptions: {
       input: './example/src/main.js'
@@ -13,8 +13,8 @@ export default {
   plugins: [
     ViteKSS({
       kss: {
-        source: [process.cwd() + '/example/src/'],
-        destination: process.cwd() + '/example/prototype/',
+        source: ['src/'],
+        destination: 'prototype/',
         css: [],
         js: [],
       }
