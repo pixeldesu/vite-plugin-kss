@@ -1,13 +1,15 @@
 import type { KssOptions as DefaultKssOptions } from 'kss'
 
 export type KssOptions = {
-  destination: string
+  destination?: string
 
-  js: string[]
+  js?: string[]
 
-  css: string[]
+  css?: string[]
 } & DefaultKssOptions
 
 export type ViteKSSPluginOptions = {
   kss: KssOptions
 }
+
+export type ResolvedViteKSSOptions = Required<ViteKSSPluginOptions>
