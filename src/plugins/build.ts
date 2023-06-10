@@ -1,8 +1,8 @@
 import type { Plugin } from 'vite'
+import type { OutputChunk } from 'rollup'
+import type { KSSPluginContext } from '../context'
 import kss from 'kss'
 import { _writeBundle } from '../utils/writeBundle'
-import { OutputChunk } from 'rollup'
-import { KSSPluginContext } from '../context'
 
 export function BuildPlugin(ctx: KSSPluginContext) {
   return <Plugin>{

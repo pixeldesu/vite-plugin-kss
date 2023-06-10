@@ -1,5 +1,5 @@
-import { Plugin } from 'vite'
-import { KSSPluginContext } from '../context'
+import type { Plugin } from 'vite'
+import type { KSSPluginContext } from '../context'
 import { resolveOptions } from '../options'
 
 export function MainPlugin(ctx: KSSPluginContext) {

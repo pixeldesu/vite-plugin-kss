@@ -1,5 +1,5 @@
-import { HmrContext, Plugin } from 'vite'
-import { KSSPluginContext } from '../context'
+import type { HmrContext, Plugin } from 'vite'
+import type { KSSPluginContext } from '../context'
 import kss from 'kss'
 import { existsSync, readFileSync } from 'fs'
 import { join } from 'path'
