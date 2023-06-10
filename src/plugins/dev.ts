@@ -22,6 +22,12 @@ export function DevPlugin(ctx: KSSPluginContext) {
           const regex = new RegExp(`^${ctx.options.dev.prefix}(.+)$`, 'g')
           const matches = Array.from(req.url.matchAll(regex))
 
+          if (req.url === ctx.options.dev.prefix) {
+            res.statusCode = 301
+            res.setHeader('Location', `${ctx.options.dev.prefix}index.html`)
+            res.end()
+          }
+
           if (matches && matches[0]) {
             const fileName = matches[0][1]
             const fullPath = join(ctx.options.kss.destination!, fileName)
