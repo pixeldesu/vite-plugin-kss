@@ -18,13 +18,13 @@ export function DevPlugin(ctx: KSSPluginContext) {
 
     configureServer(server) {
       server.middlewares.use(async (req, res, next) => {
-        if (req.url?.startsWith(ctx.options.dev.prefix)) {
-          const regex = new RegExp(`^${ctx.options.dev.prefix}(.+)$`, 'g')
+        if (req.url?.startsWith(ctx.options.dev.base)) {
+          const regex = new RegExp(`^${ctx.options.dev.base}(.+)$`, 'g')
           const matches = Array.from(req.url.matchAll(regex))
 
-          if (req.url === ctx.options.dev.prefix) {
+          if (req.url === ctx.options.dev.base) {
             res.statusCode = 301
-            res.setHeader('Location', `${ctx.options.dev.prefix}index.html`)
+            res.setHeader('Location', `${ctx.options.dev.base}index.html`)
             res.end()
           }
 
@@ -58,7 +58,7 @@ export function DevPlugin(ctx: KSSPluginContext) {
 
     handleHotUpdate(hmrCtx: HmrContext) {
       // only rebuild KSS if files outside of the prototype directory change
-      if (!hmrCtx.file.includes(ctx.options.dev.prefix)) {
+      if (!hmrCtx.file.includes(ctx.options.dev.base)) {
         kss(ctx.options.kss)
         KSS_FILE_CACHE.clear()
       }

@@ -9,7 +9,7 @@ export type KssOptions = {
 } & DefaultKssOptions
 
 export type DevPluginOptions = {
-  prefix: string
+  base: string
   entry: string
 }
 

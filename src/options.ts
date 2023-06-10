@@ -10,7 +10,7 @@ export function resolveOptions(
   const options = {
     ...userOptions,
     dev: {
-      prefix: userOptions.dev?.prefix || '/prototype/',
+      base: userOptions.dev?.base || '/prototype/',
       entry: userOptions.dev?.entry || '',
     },
     kss: {
@@ -23,7 +23,7 @@ export function resolveOptions(
 
   return {
     dev: {
-      prefix: options.dev.prefix,
+      base: options.dev.base,
       entry: options.dev.entry,
     },
     kss: {

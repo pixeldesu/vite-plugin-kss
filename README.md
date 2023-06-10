@@ -22,7 +22,7 @@ export default {
     ViteKSS({
       dev: {
         // base of the KSS output being available on the Vite dev server
-        prefix: '/prototype/',
+        base: '/prototype/',
 
         // entry script file (for injection into KSS)
         entry: '/src/main.js',
