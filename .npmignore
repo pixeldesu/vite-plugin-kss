@@ -1,2 +1,5 @@
 .github/
 example/
+.eslint*
+.prettier*
+.git*
