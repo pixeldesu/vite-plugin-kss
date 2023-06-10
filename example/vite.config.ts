@@ -7,21 +7,21 @@ export default {
     outDir: 'dist/',
     manifest: true,
     rollupOptions: {
-      input: './example/src/main.js'
-    }
+      input: './example/src/main.js',
+    },
   },
   plugins: [
     ViteKSS({
       dev: {
         prefix: '/prototype/',
-        entry: '/src/main.js'
+        entry: '/src/main.js',
       },
       kss: {
         source: ['src/'],
         destination: 'prototype/',
         css: [],
         js: [],
-      }
-    })
-  ]
+      },
+    }),
+  ],
 }

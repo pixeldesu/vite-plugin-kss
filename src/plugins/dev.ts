@@ -1,6 +1,6 @@
-import { HmrContext, Plugin } from "vite";
-import { KSSPluginContext } from "../context";
-import kss from "kss";
+import { HmrContext, Plugin } from 'vite'
+import { KSSPluginContext } from '../context'
+import kss from 'kss'
 import { existsSync, readFileSync } from 'fs'
 import { join } from 'path'
 
@@ -25,17 +25,15 @@ export function DevPlugin(ctx: KSSPluginContext) {
           if (matches && matches[0]) {
             const fileName = matches[0][1]
             const fullPath = join(ctx.options.kss.destination!, fileName)
-            let contents;
+            let contents
 
             if (KSS_FILE_CACHE.has(fullPath)) {
               contents = KSS_FILE_CACHE.get(fullPath)
-            }
-            else if (existsSync(fullPath)) {
-              contents = readFileSync(fullPath, 'utf-8')
-                .replace(
-                  '</body>', 
-                  `<script type="module" src="/@vite/client"></script><script type="module" src="${ctx.options.dev.entry}"></script></body>`
-                )
+            } else if (existsSync(fullPath)) {
+              contents = readFileSync(fullPath, 'utf-8').replace(
+                '</body>',
+                `<script type="module" src="/@vite/client"></script><script type="module" src="${ctx.options.dev.entry}"></script></body>`
+              )
 
               KSS_FILE_CACHE.set(fullPath, contents)
             }
@@ -46,8 +44,7 @@ export function DevPlugin(ctx: KSSPluginContext) {
               res.end()
             }
           }
-        }
-        else {
+        } else {
           next()
         }
       })

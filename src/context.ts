@@ -7,10 +7,12 @@ export interface KSSPluginContext {
   options: ResolvedViteKSSOptions
 }
 
-export function createContext(userOptions: Partial<ViteKSSPluginOptions>): KSSPluginContext {
+export function createContext(
+  userOptions: Partial<ViteKSSPluginOptions>
+): KSSPluginContext {
   return {
     userOptions,
     options: undefined!,
-    viteConfig: undefined!
+    viteConfig: undefined!,
   }
 }

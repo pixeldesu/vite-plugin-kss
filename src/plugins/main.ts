@@ -1,6 +1,6 @@
-import { Plugin } from "vite";
-import { KSSPluginContext } from "../context";
-import { resolveOptions } from "../options";
+import { Plugin } from 'vite'
+import { KSSPluginContext } from '../context'
+import { resolveOptions } from '../options'
 
 export function MainPlugin(ctx: KSSPluginContext) {
   return <Plugin>{
@@ -9,6 +9,6 @@ export function MainPlugin(ctx: KSSPluginContext) {
     async configResolved(config) {
       ctx.viteConfig = config
       ctx.options = resolveOptions(ctx.userOptions, config)
-    }
+    },
   }
 }

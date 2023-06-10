@@ -19,10 +19,10 @@ export function BuildPlugin(ctx: KSSPluginContext) {
       const cssAssets = assets
         .filter(([fileName]) => fileName.endsWith('.css'))
         .map(([fileName]) => fileName)
-      
+
       const jsAssets = assets
         .filter(([fileName, assetInfo]) => {
-          return (fileName.endsWith('.js') && (assetInfo as OutputChunk)?.isEntry)
+          return fileName.endsWith('.js') && (assetInfo as OutputChunk)?.isEntry
         })
         .map(([fileName]) => fileName)
 
@@ -30,6 +30,6 @@ export function BuildPlugin(ctx: KSSPluginContext) {
       kssOptions.js = kssOptions.js!.concat(jsAssets)
 
       kss(kssOptions)
-    }
+    },
   }
 }
