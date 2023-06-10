@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsup-node src/index.ts --dts",
     "format": "prettier --write .",
+    "format-check": "prettier --check .",
     "lint": "eslint .",
     "example": "vite build --config example/vite.config.ts",
     "example-dev": "vite serve --config example/vite.config.ts"
