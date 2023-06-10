@@ -17,13 +17,14 @@ export function BuildPlugin(ctx: KSSPluginContext) {
       const assets = Object.entries(bundle)
 
       const cssAssets = assets
-        .filter(([fileName, _assetInfo]) => fileName.endsWith('.css'))
-        .map(([fileName, _assetInfo]) => fileName)
+        .filter(([fileName]) => fileName.endsWith('.css'))
+        .map(([fileName]) => fileName)
       
-      const jsAssets = assets.filter(([fileName, assetInfo]) => {
+      const jsAssets = assets
+        .filter(([fileName, assetInfo]) => {
           return (fileName.endsWith('.js') && (assetInfo as OutputChunk)?.isEntry)
         })
-        .map(([fileName, _assetInfo]) => fileName)
+        .map(([fileName]) => fileName)
 
       kssOptions.css = kssOptions.css!.concat(cssAssets)
       kssOptions.js = kssOptions.js!.concat(jsAssets)
