@@ -46,7 +46,7 @@ With the plugin configured, KSS generation is now done when running both `vite b
 
 When doing a production build with `vite build` the plugin automatically collects all JS entrypoints and CSS assets, also outputs them to the configured KSS destination and includes them in the build configuration so they are rendered into the HTML output.
 
-If a development server is running using `vite dev`/`vite serve`, KSS is available at `localhost:5173/prototype/` (or the configured `dev.prefix` location). The plugin automatically injects the Vite client and entrypoint (configured in `dev.entry`) so HMR and all assets work properly.
+If a development server is running using `vite dev`/`vite serve`, KSS is available at `localhost:5173/prototype/` (or the configured `dev.base` location). The plugin automatically injects the Vite client and entrypoint (configured in `dev.entry`) so HMR and all assets work properly.
 
 ## License
 
