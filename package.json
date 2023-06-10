@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/pixeldesu/vite-plugin-kss.git"
   },
-  "keywords": [],
+  "keywords": ["vite-plugin", "kss", "kss-node"],
   "author": "",
   "license": "MIT",
   "bugs": {
