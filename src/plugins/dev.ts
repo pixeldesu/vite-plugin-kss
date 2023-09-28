@@ -38,7 +38,7 @@ export function DevPlugin(ctx: KSSPluginContext) {
             } else if (existsSync(fullPath)) {
               contents = readFileSync(fullPath, 'utf-8').replace(
                 '</body>',
-                `<script type="module" src="/@vite/client"></script><script type="module" src="${ctx.options.dev.entry}"></script></body>`
+                `<script type="module" src="/@vite/client"></script><script type="module" src="${ctx.options.dev.entry}"></script></body>`,
               )
 
               KSS_FILE_CACHE.set(fullPath, contents)

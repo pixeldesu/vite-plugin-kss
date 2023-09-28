@@ -5,7 +5,7 @@ import { join } from 'path'
 
 export function resolveOptions(
   userOptions: Partial<ViteKSSPluginOptions>,
-  viteConfig: ResolvedConfig
+  viteConfig: ResolvedConfig,
 ): ResolvedViteKSSOptions {
   const options = {
     ...userOptions,

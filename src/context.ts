@@ -8,7 +8,7 @@ export interface KSSPluginContext {
 }
 
 export function createContext(
-  userOptions: Partial<ViteKSSPluginOptions>
+  userOptions: Partial<ViteKSSPluginOptions>,
 ): KSSPluginContext {
   return {
     userOptions,
